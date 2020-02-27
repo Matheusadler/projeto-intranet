@@ -1,141 +1,274 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/app.css">
-  <title>Laravel em 5 minutos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/app.css">
+    <title>GWI - Intranet</title>
 
     <link rel="stylesheet" href="/css/app.css">
 </head>
+
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+    <div class="wrapper">
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
 
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-      </li>
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+                </li>
 
-    </ul>
+            </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+            <!-- SEARCH FORM -->
+            <form class="form-inline ml-3">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Pesquisar"
+                        aria-label="Pesquisar">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
 
-  </nav>
-  <!-- /.navbar -->
+        </nav>
+        <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="https://image.freepik.com/free-icon/world-wide-web_318-65671.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">Intranet Mirante</span>
-    </a>
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="https://image.freepik.com/free-icon/user_318-134392.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">
-              
-          </a>
-        </div>
-      </div>
 
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="https://image.freepik.com/free-icon/world-wide-web_318-65671.jpg" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Intranet Mirante</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="https://image.freepik.com/free-icon/user_318-134392.jpg"
+                            class="img-circle elevation-2" alt="User Image">
+                            
+                    </div>
+                  
+                    <div class="info">
+                        <a href="#" class="d-block">
+
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-            <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                Dashboard
-                </p>
-            </a>
-            </li>
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
 
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
-                <p>
-                    Gerar Capa
-                </p>
-            </a>
-        </li>
+                        <li class="nav-item">
+                            <a href="/capa" class="nav-link">
+                                <i class="nav-icon fa fa-cog"></i>
+                                <p>
+                                    Gerar Capa
+                                </p>
+                            </a>
+                        </li>
 
-        <li class="nav-item">
-            <a href="/perfil" class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
-                    <p>
-                        Perfil
-                    </p>
-            </a>
-        </li>
+                        <li class="nav-item">
+                            <a href="/noticia" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Notícias
+                                </p>
+                            </a>
+                        </li>
 
-          <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fa fa-power-off"></i>
-                    <p>
-                        Sair
-                    </p>
-                </a>
-        </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
+                        <li class="nav-item">
+                            <a href="/editoria" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Editorias
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/galeria" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Galerias
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/imagem" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Banco de Imagens
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/promoção" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Promoções
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/modulo" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Módulos
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/operacao" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Operações
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/plantao" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Escala de Plantão
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/ramal" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Ramais
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/perfil" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Perfis
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/usuario" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Usuários
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-power-off"></i>
+                                <p>
+                                    Sair
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+
+
+            <!-- Main content -->
+            <div class="content">
+                <div id="app">
+                    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                        <div class="container">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <!-- Left Side Of Navbar -->
+                                <ul class="navbar-nav mr-auto">
+
+                                </ul>
+
+                                <!-- Right Side Of Navbar -->
+                                <ul class="navbar-nav ml-auto">
+                                    <!-- Authentication Links -->
+                                    @guest
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                
+                                    
+                                    @endguest
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <main class="py-4">
+                        @yield('content')
+                    </main>
+                </div>
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
     </div>
-    <!-- /.sidebar -->
-  </aside>
+    <!-- /.content-wrapper -->
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
 
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-            @yield('content')
-      </div><!-- /.container-fluid -->
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="float-right d-none d-sm-inline">
+            Compartilhe essa ideia.
+        </div>
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2020
+            Intranet Mirante.</strong>
+    </footer>
     </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+    <!-- ./wrapper -->
 
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Compartilhe essa ideia.
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="https://meirimrafael.wixsite.com/meusite/forum/curso-laravel-em-5-min">
-      Laravel em 5 minutos</a>.</strong>
-  </footer>
-</div>
-<!-- ./wrapper -->
-
-<script src="/js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
+
 </html>

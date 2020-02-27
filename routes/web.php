@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -19,10 +19,58 @@ Route::get('/', function () {
     return view('site.welcome');
 });
 
-Route::get('/home', function () {
-    return view('admin.pages.index');
+Route::get('/dashboard', function () {
+    return view('admin.pages.dashboard');
 });
 
 Route::get('/perfil', function () {
     return view('admin.pages.perfil');
 });
+
+Route::get('/capa', function () {
+    return view('admin.pages.capa');
+});
+
+Route::get('/editoria', function () {
+    return view('admin.pages.editoria');
+});
+
+Route::get('/galeria', function () {
+    return view('admin.pages.galeria');
+});
+
+Route::get('/imagem', function () {
+    return view('admin.pages.imagem');
+});
+
+Route::get('/modulo', function () {
+    return view('admin.pages.modulo');
+});
+
+Route::get('/noticia', function () {
+    return view('admin.pages.noticia');
+});
+
+Route::get('/operacao', function () {
+    return view('admin.pages.operacao');
+});
+
+Route::get('/plantao', function () {
+    return view('admin.pages.plantao');
+});
+
+Route::get('/promoção', function () {
+    return view('admin.pages.promocao');
+});
+
+Route::get('/ramal', function () {
+    return view('admin.pages.ramal');
+});
+
+Route::get('/usuario', function () {
+    return view('admin.pages.usuario');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

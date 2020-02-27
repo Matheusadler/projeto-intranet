@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('content')
-<h1>Index</h1>
+<h1>Dashboard</h1>
     
 @endsection
