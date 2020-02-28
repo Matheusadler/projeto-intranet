@@ -9,12 +9,13 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
-
-                    You are logged in!
+                    <div class="text-center">
+                        <h3>Bem Vindo ao sistema de Intranet Mirante</h3>
+                    </div>
                 </div>
             </div>
         </div>

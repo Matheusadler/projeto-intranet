@@ -35,7 +35,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <script src="/js/app.js"></script>
+    <script type="text" src="js/app.js"></script>
 </body>
 
 </html>

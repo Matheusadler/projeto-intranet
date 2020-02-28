@@ -13,10 +13,13 @@ const mix = require('laravel-mix');
 
 mix.styles(['./node_modules/bootstrap/dist/css/bootstrap.css',
     './node_modules/admin-lte/dist/css/adminlte.css',
+    './node_modules/bootstrap/dist/css/bootstrap.min.css',
     'resource/css/app.css'
 ], 'public/css/app.css');
 
 mix.scripts(['./node_modules/jquery/dist/jquery.min.js',
-    './node_modules/popper.js/dist/popper.min.js',
-    './node_modules/dist/js/adminlte.min.js'
+    './node_modules/popper.js/dist/umd/popper.min.js',
+    './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    './node_modules/admin-lte/dist/js/plugins/bootstrap/js/bootstrap.bundle.min.js',
+    './node_modules/admin-lte/dist/js/adminlte.min.js',
 ], 'public/js/app.js');

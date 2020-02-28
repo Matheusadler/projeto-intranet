@@ -5,10 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/app.css">
     <title>GWI - Intranet</title>
-
     <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -25,19 +24,6 @@
 
             </ul>
 
-            <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Pesquisar"
-                        aria-label="Pesquisar">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
         </nav>
         <!-- /.navbar -->
 
@@ -46,7 +32,7 @@
 
 
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="/home" class="brand-link">
                 <img src="https://image.freepik.com/free-icon/world-wide-web_318-65671.jpg" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Intranet Mirante</span>
@@ -59,148 +45,315 @@
                     <div class="image">
                         <img src="https://image.freepik.com/free-icon/user_318-134392.jpg"
                             class="img-circle elevation-2" alt="User Image">
-                            
+
                     </div>
-                  
+
                     <div class="info">
                         <a href="#" class="d-block">
-
+                            {{ Auth::user()->name }}
                         </a>
                     </div>
                 </div>
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                <nav class="mt-2 menu">
+                    <ul class="nav nav-pills nav-sidebar flex-column menu-list" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-                        <li class="nav-item">
-                            <a href="/dashboard" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="/home" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Dashboard
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/capa" class="nav-link">
-                                <i class="nav-icon fa fa-cog"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Gerar Capa
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/capa" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Gerar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/noticia" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Notícias
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/noticia" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/editoria" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Editorias
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/editoria" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/galeria" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Galerias
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/galeria" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/imagem" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Banco de Imagens
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/imagem" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/promoção" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Promoções
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/promoção" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/modulo" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Módulos
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/modulo" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/operacao" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Operações
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/operacao" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/plantao" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Escala de Plantão
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/plantao" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/ramal" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Ramais
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/ramal" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Atualizar Lista de Ramais</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/perfil" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Perfis
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/perfil" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/usuario" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
                                 <p>
                                     Usuários
+                                    <i class="right fa fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/usuario" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Adicionar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="/logout" class="nav-link">
+                                <i class="nav-icon fa fa-dashboard"></i>
+                                <p>
+                                    Sair
+                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-power-off"></i>
-                                <p>
-                                    Sair
-                                </p>
-                            </a>
-                        </li>
+
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -211,39 +364,9 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
 
-
             <!-- Main content -->
             <div class="content">
                 <div id="app">
-                    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                        <div class="container">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <!-- Left Side Of Navbar -->
-                                <ul class="navbar-nav mr-auto">
-
-                                </ul>
-
-                                <!-- Right Side Of Navbar -->
-                                <ul class="navbar-nav ml-auto">
-                                    <!-- Authentication Links -->
-                                    @guest
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    </li>
-                                
-                                    
-                                    @endguest
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-
                     <main class="py-4">
                         @yield('content')
                     </main>
@@ -268,7 +391,8 @@
     </div>
     <!-- ./wrapper -->
 
-    <script src="/js/app.js"></script>
 </body>
+
+<script src="/js/app.js"></script>
 
 </html>
