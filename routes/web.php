@@ -48,8 +48,12 @@ Route::get('/modulo', function () {
     return view('admin.pages.modulo');
 });
 
-Route::get('/noticia', function () {
-    return view('admin.pages.noticia');
+Route::get('/noticia/adicionar', function () {
+    return view('admin.pages.add_noticia');
+});
+
+Route::get('/noticia/listar', function () {
+    return view('admin.pages.listar_noticia');
 });
 
 Route::get('/operacao', function () {

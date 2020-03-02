@@ -58,7 +58,7 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2 menu">
                     <ul class="nav nav-pills nav-sidebar flex-column menu-list" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                        data-accordion="true">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -100,13 +100,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/noticia" class="nav-link active">
+                                    <a href="/noticia/adicionar" class="nav-link active">
                                         <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="/noticia/listar" class="nav-link active">
                                         <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
