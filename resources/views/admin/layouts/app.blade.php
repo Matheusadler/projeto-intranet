@@ -8,6 +8,9 @@
     <title>GWI - Intranet</title>
     <link rel="stylesheet" href="/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -64,26 +67,24 @@
 
                         <li class="nav-item has-treeview">
                             <a href="/home" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-home"></i>
                                 <p>
                                     Dashboard
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-file-export"></i>
                                 <p>
                                     Gerar Capa
-                                    <i class="right fa fa-angle-left"></i>
+
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/capa" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Gerar</p>
                                     </a>
                                 </li>
@@ -92,22 +93,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-comment-dots"></i>
                                 <p>
                                     Notícias
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/noticia/adicionar" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/noticia/listar" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -116,22 +114,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-bookmark"></i>
                                 <p>
                                     Editorias
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/editoria" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -140,22 +135,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-camera"></i>
                                 <p>
                                     Galerias
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/galeria" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -164,22 +156,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-images"></i>
                                 <p>
                                     Banco de Imagens
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/imagem" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -188,22 +177,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-hand-holding-usd"></i>
                                 <p>
                                     Promoções
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/promoção" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -212,22 +198,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-layer-group"></i>
                                 <p>
                                     Módulos
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/modulo" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -236,16 +219,14 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-code"></i>
                                 <p>
                                     Operações
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/operacao" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -254,22 +235,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
                                     Escala de Plantão
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/plantao" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -278,16 +256,14 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-phone-square-alt"></i>
                                 <p>
                                     Ramais
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/ramal" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Atualizar Lista de Ramais</p>
                                     </a>
                                 </li>
@@ -296,22 +272,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-plus-square"></i>
                                 <p>
                                     Perfis
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/perfil" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -320,22 +293,19 @@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-user-cog"></i>
                                 <p>
                                     Usuários
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/usuario" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link active">
-                                        <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
@@ -344,16 +314,12 @@
 
                         <li class="nav-item has-treeview">
                             <a href="/logout" class="nav-link">
-                                <i class="nav-icon fa fa-dashboard"></i>
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>
                                     Sair
-                                    <i class="right fa fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
-
-
-
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -379,11 +345,7 @@
 
 
     <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
-            Compartilhe essa ideia.
-        </div>
+    <footer class="main-footer text-center">
         <!-- Default to the left -->
         <strong>Copyright &copy; 2020
             Intranet Mirante.</strong>
@@ -391,8 +353,10 @@
     </div>
     <!-- ./wrapper -->
 
+    <script src="{{mix('js/app.js')}}"></script>
+    <script src="https://kit.fontawesome.com/f1a1640905.js" crossorigin="anonymous"></script>
 </body>
 
-<script src="/js/app.js"></script>
+
 
 </html>
