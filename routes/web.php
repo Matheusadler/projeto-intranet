@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NoticiaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,14 +49,6 @@ Route::get('/modulo', function () {
     return view('admin.pages.modulo');
 });
 
-Route::get('/noticia/adicionar', function () {
-    return view('admin.pages.add_noticia');
-});
-
-Route::get('/noticia/listar', function () {
-    return view('admin.pages.listar_noticia');
-});
-
 Route::get('/operacao', function () {
     return view('admin.pages.operacao');
 });
@@ -81,3 +74,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('logout', 'LogoutController@logout')->name('logout');
+
+Route::resource('noticia', 'NoticiaController');

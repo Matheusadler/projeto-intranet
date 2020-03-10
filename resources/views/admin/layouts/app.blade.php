@@ -100,12 +100,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/noticia/adicionar" class="nav-link active">
+                                    <a href="{{ route('noticia.create') }}" class="nav-link active">
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/noticia/listar" class="nav-link active">
+                                    <a href="{{ route('noticia.index') }}" class="nav-link active">
                                         <p>Listar</p>
                                     </a>
                                 </li>
