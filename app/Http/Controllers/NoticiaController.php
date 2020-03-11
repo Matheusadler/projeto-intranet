@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Noticia;
-use App\Models\Teste;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class NoticiaController extends Controller
 {
@@ -48,8 +48,19 @@ class NoticiaController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        dd($request->all());
+        //dd($request->all());
+        Noticia::create([
+            "chapeu" => $request->chapeu,
+            "setor" => $request->setor,
+            "titulo_interno" => $request->titulo_interno,
+            "titulo_capa" => $request->titulo_capa,
+            "subtitulo" => $request->subtitulo,
+            "texto" => $request->texto,
+            "data_inicial" => Carbon::createFromFormat('d/m/Y', $request->data_inicial),
+            "data_final" => Carbon::createFromFormat('d/m/Y', $request->data_final),
+        ]);
+
+        return redirect()->route('noticia.index');
     }
 
     /**

@@ -1,5 +1,4 @@
 //require('./bootstrap');
-console.log("tstet")
 $(function() {
     //Initialize Select2 Elements
     $('.select2').select2()
@@ -11,10 +10,9 @@ $(function() {
 
     //Date range picker with time picker
     $('#reservationtime').daterangepicker({
-        timePicker: true,
-        timePickerIncrement: 30,
-        format: 'MM/DD/YYYY h:mm A'
+        singleDatePicker: true,
+        showDropdowns: true,
+        minYear: 1901,
+        maxYear: parseInt(moment().format('YYYY'), 10)
     })
 })
-
-console.log("teste123")

@@ -15,23 +15,23 @@
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>chapeu</th>
-                                <th>autor</th>
-                                <th>interno</th>
-                                <th>capa</th>
-                                <th>subtitulo</th>
-                                <th>texto</th>
+                                <th class="text-center">Título da Notícia</th>
+                                <th class="text-center">Data de Publicação</th>
+                                <th class="text-center">Criado por</th>
+                                <th class="text-center">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($noticias as $noticia)
                             <tr>
-                                <td>{{ $noticia->chapeu }}</td>
-                                <td>{{ $noticia->autor }}</td>
-                                <td>{{ $noticia->titulo_interno }}</td>
-                                <td>{{ $noticia->subtitulo }}</td>
-                                <td>{{ $noticia->texto }}</td>
-
+                                <td class="text-left">{{ $noticia->titulo_interno }}</td>
+                                <td class="text-center">{{ $noticia->data_inicial->format('d/m/Y') }}</td>
+                                <td class="text-center">{{ Auth::user()->name }}</td>
+                                <td class="text-center">
+                                    <a href="/#"><i class="nav-icon fas fa-arrows-alt"></i></a>
+                                    <a href="/#"><i class="nav-icon fas fa-edit"></i></a>
+                                    <a href="/#"><i class="nav-icon fas fa-trash-alt"></i></a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
