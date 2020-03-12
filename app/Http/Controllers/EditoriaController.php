@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BancoImagem;
-use App\Models\Noticia;
-use App\Models\Editoria;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
 
-class NoticiaController extends Controller
+class EditoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,18 +13,7 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = Noticia::all();
-        return view('admin.pages.noticia.listar_noticia', [
-            'noticias' => $noticias,
-        ]);
-        /*
-        $noticias = Noticia::all();
-        dd($noticias->all());
-
-        return view('admin.pages.noticia.listar_noticia', [
-            'noticias' => $noticias,
-        ]);
-        echo ('teste');*/
+        //
     }
 
     /**
@@ -39,12 +24,6 @@ class NoticiaController extends Controller
     public function create()
     {
         //
-        $editorias = Editoria::all();
-        $imagens = BancoImagem::all();
-        return view('admin.pages.noticia.add_noticia', [
-            'editorias' => $editorias,
-            'imagens' => $imagens,
-        ]);
     }
 
     /**
@@ -55,21 +34,7 @@ class NoticiaController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        Noticia::create([
-            "chapeu" => $request->chapeu,
-            "setor" => $request->setor,
-            "titulo_interno" => $request->titulo_interno,
-            "titulo_capa" => $request->titulo_capa,
-            "subtitulo" => $request->subtitulo,
-            "texto" => $request->texto,
-            "data_inicial" => Carbon::createFromFormat('d/m/Y', $request->data_inicial),
-            "data_final" => Carbon::createFromFormat('d/m/Y', $request->data_final),
-            "editoria_id" => $request->editoria,
-            "banco_imagem_id" => $request->imagem,
-        ]);
-
-        return redirect()->route('noticia.index');
+        //
     }
 
     /**

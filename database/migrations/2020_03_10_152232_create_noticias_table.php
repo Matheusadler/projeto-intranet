@@ -23,8 +23,8 @@ class CreateNoticiasTable extends Migration
             $table->text('texto');
             $table->timestamp('data_inicial')->nullable();
             $table->timestamp('data_final')->nullable();
-            $table->unsignedBigInteger('banco_imagem_id')->nullable();
-            $table->unsignedBigInteger('editoria_id')->nullable();
+            $table->unsignedBigInteger('banco_imagem_id');
+            $table->unsignedBigInteger('editoria_id');
             $table->index('banco_imagem_id', 'fk_tb_noticia_tb_banco_imagem1_idx');
             $table->index('editoria_id', 'fk_tb_noticia_tb_editoria1_idx');
             $table->timestamps();

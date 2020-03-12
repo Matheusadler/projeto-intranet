@@ -23643,3 +23643,7 @@ a.text-muted:hover {
     padding: 10px;
     margin: 0 5px;
 }
+
+.full-form {
+    width: 100%;
+}

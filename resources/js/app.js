@@ -13,6 +13,21 @@ $(function() {
         singleDatePicker: true,
         showDropdowns: true,
         minYear: 1901,
-        maxYear: parseInt(moment().format('YYYY'), 10)
+        maxYear: parseInt(moment().format('YYYY'), 10),
+        Locale: {
+            format: "DD/MM/YYYY"
+        }
+    })
+
+    //Date range picker with time picker
+    $('#reservationtime2').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        minYear: 1901,
+        maxYear: parseInt(moment().format('YYYY'), 10),
+        Locale: {
+            format: 'dd/mm/yyyy',
+            language: 'pt-BR'
+        }
     })
 })
