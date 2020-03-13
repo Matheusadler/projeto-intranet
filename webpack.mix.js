@@ -31,6 +31,7 @@ mix.scripts(['./node_modules/jquery/dist/jquery.min.js',
     './node_modules/admin-lte/plugins/input-mask/jquery.inputmask.date.extensions.js',
     './node_modules/admin-lte/plugins/input-mask/jquery.inputmask.extensions.js',
     './node_modules/admin-lte/plugins/daterangepicker/daterangepicker.js',
+    'resources/js/tempus-dominus.js',
     'resources/js/app.js'
 ], 'public/js/app.js');
 

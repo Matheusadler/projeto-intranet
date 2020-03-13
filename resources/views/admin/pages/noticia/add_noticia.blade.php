@@ -13,18 +13,16 @@
 
                 <div class="card card-dark">
                     <div class="card-header">
-                        <h3 class="card-title">Informações da notícia</h3>
+                        <h3 class="card-title">Informações da Notícia</h3>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
                             <label>Chapéu</label>
-                            <input class="form-control" type="text" name="chapeu" value="{{ old('chapeu') }}"
-                                placeholder="chapeu">
+                            <input class="form-control" type="text" name="chapeu" value="{{ old('chapeu') }}">
                         </div>
                         <div class="form-group">
                             <label>Setor</label>
-                            <input class="form-control" type="text" name="setor" value="{{ old('setor') }}"
-                                placeholder="setor">
+                            <input class="form-control" type="text" name="setor" value="{{ old('setor') }}">
                         </div>
                         <div class="form-group">
                             <label>Editoria</label>
@@ -60,7 +58,7 @@
                                 <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                             </div>
                             <input type="text" autocomplete="off" name="data_inicial" value="{{ old('data_inicial') }}"
-                                class="form-control" id="reservationtime">
+                                class="form-control datas">
                         </div>
                     </div>
                     <div class="card-body">
@@ -70,7 +68,7 @@
                                 <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
                             </div>
                             <input type="text" autocomplete="off" name="data_final" value="{{ old('data_final') }}"
-                                class="form-control" id="reservationtime2">
+                                class="form-control datas">
                         </div>
                     </div>
                 </div>
@@ -86,20 +84,20 @@
                     <div class="form-group">
                         <label>Título Interno</label>
                         <input class="form-control" type="text" name="titulo_interno"
-                            value="{{ old('titulo_interno') }}" placeholder="titulo interno">
+                            value="{{ old('titulo_interno') }}">
                     </div>
                     <div class="form-group">
                         <label>Título Capa</label>
-                        <input class="form-control" type="text" name="titulo_capa" value="{{ old('titulo_capa') }}"
-                            placeholder="titulo capa">
+                        <input class="form-control" type="text" name="titulo_capa" value="{{ old('titulo_capa') }}">
                     </div>
                     <div class="form-group">
                         <label>Subtítulo da Notícia</label>
-                        <textarea class="form-control" name="subtitulo" value="{{ old('subtitulo') }}" rows="3"
-                            placeholder="subtitulo"></textarea>
+                        <textarea class="form-control" name="subtitulo" value="{{ old('subtitulo') }}"
+                            rows="3"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
+                        <label>Corpo da Notícia</label>
                         <textarea class="form-control" name="texto" value="{{ old('texto') }}" id="summary-ckeditor"
                             placeholder="texto"></textarea>
                     </div>
@@ -107,7 +105,7 @@
             </div>
 
         </div>
-        <div class="card-footer">
+        <div class="card-footer text-center">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSubmit">Adicionar
                 Notícia</button>
             <button type="button" class="btn btn-primary" data-toggle="modal"

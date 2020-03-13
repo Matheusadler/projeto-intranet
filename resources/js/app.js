@@ -4,12 +4,10 @@ $(function() {
     $('.select2').select2()
 
     //Datemask dd/mm/yyyy
-    $('#datemask').inputmask('dd/mm/yyyy', {
-        'placeholder': 'dd/mm/yyyy'
-    })
+    //$('#datemask').inputmask('dd/mm/aaaa');
 
     //Date range picker with time picker
-    $('#reservationtime').daterangepicker({
+    /*$('#reservationtime').daterangepicker({
         singleDatePicker: true,
         showDropdowns: true,
         minYear: 1901,
@@ -17,17 +15,43 @@ $(function() {
         Locale: {
             format: "DD/MM/YYYY"
         }
-    })
+    })*/
 
     //Date range picker with time picker
-    $('#reservationtime2').daterangepicker({
+    const datepicker = $(".datas");
+    //if (datepicker.length > 0) {
+    datepicker.daterangepicker({
+        autoUpdateInput: false,
         singleDatePicker: true,
         showDropdowns: true,
-        minYear: 1901,
-        maxYear: parseInt(moment().format('YYYY'), 10),
-        Locale: {
-            format: 'dd/mm/yyyy',
-            language: 'pt-BR'
+        drops: "up",
+        locale: {
+            format: "DD/MM/YYYY",
+            daysOfWeek: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+            monthNames: [
+                "Janeiro",
+                "Fevereiro",
+                "Março",
+                "Abril",
+                "Maio",
+                "Junho",
+                "Julho",
+                "Agosto",
+                "Setembro",
+                "Outubro",
+                "Novembro",
+                "Dezembro"
+            ]
         }
-    })
-})
+    });
+    /*
+            datepicker.mask("00/00/0000", {
+                clearIfNotMatch: true,
+                placeholder: "__/__/____"
+            });*/
+
+    datepicker.on("apply.daterangepicker", function(ev, picker) {
+        $(this).val(picker.startDate.format("DD/MM/YYYY"));
+    });
+    //}
+});
