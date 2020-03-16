@@ -76,3 +76,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', 'LogoutController@logout')->name('logout');
 
 Route::resource('noticia', 'NoticiaController');
+
+Route::resource('imagem', 'ImagemController');

@@ -27,6 +27,7 @@
                         <div class="form-group">
                             <label>Editoria</label>
                             <select class="form-control" name="editoria">
+                                <option value="" disabled selected>Selecione uma Editoria</option>
                                 @foreach ($editorias as $editoria)
                                 <option value="{{ $editoria->id }}">{{ $editoria->nome }}</option>
                                 @endforeach

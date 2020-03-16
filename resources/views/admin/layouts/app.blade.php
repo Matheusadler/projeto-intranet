@@ -164,7 +164,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/imagem" class="nav-link active">
+                                    <a href="{{ route('imagem.create') }}" class="nav-link active">
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
