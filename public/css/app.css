@@ -23647,3 +23647,11 @@ a.text-muted:hover {
 .full-form {
     width: 100%;
 }
+
+.img-list {
+    max-width: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: 10px;
+}

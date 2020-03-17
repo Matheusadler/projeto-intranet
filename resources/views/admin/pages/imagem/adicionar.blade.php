@@ -4,7 +4,8 @@
 <div class="container-fluid">
     <h3><strong>Adicionar Imagem</strong></h3>
     <hr>
-    <form class="full-form" action="{{ route('imagem.store') }}" method="POST" enctype="multipart/form-data" role="">
+    <form class="full-form" action="{{ route('imagem.store') }}" method="POST" enctype="multipart/form-data"
+        onsubmit="return checkForm(this);">
         @csrf
         <div class="full-form">
             <div class="card card-dark">
@@ -24,7 +25,7 @@
                         </div>
                         <div class="input-group mb-3">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="imagem" name="imagem">
+                                <input type="file" class="custom-file-input" id="caminho" name="caminho">
                                 <label class="custom-file-label">Escolha o Arquivo</label>
                             </div>
                         </div>
@@ -33,12 +34,10 @@
             </div>
         </div>
         <div class="card-footer text-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSubmit">Adicionar
-                Imagem</button>
-            <button type="button" class="btn btn-primary" data-toggle="modal"
-                data-target="#ModalCancel">Cancelar</button>
+            <button type="submit" name="myButton" class="btn btn-primary">Adicionar Imagem</button>
+            <button type="button" class="btn btn-primary">Cancelar</button>
         </div>
-        <!-- Modal Submit-->
+        <!-- Modal Submit
         <div class="modal fade" id="ModalSubmit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -54,12 +53,12 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                        <button type="button" onclick="desabilitar(this)" class="btn btn-primary">Adicionar</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!--Modal Cancel -->
+        Modal Cancel 
         <div class="modal fade" id="ModalCancel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -80,9 +79,17 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </form>
 
 </div>
+
+<script>
+    function checkForm(form)
+    {    
+    form.myButton.disabled = true;
+    return true;
+    }
+</script>
 
 @endsection

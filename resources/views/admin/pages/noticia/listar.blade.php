@@ -6,9 +6,12 @@
     <hr>
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card card-dark">
                 <div class="card-header">
-                    <h3 class="card-title">Notícias Cadastradas</h3>
+                    <h5>
+                        <i class="nav-icon fas fa-list-ul"></i>
+                        Lista de Notícias Cadastradas
+                    </h5>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">

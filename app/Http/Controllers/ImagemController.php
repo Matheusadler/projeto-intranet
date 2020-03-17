@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\BancoImagem;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
-
+use Prophecy\Call\Call;
 
 class ImagemController extends Controller
 {
@@ -16,6 +17,11 @@ class ImagemController extends Controller
      */
     public function index()
     {
+        $imagens = BancoImagem::all();
+        //dd($imagens);
+        return view('admin.pages.imagem.listar', [
+            'imagens' => $imagens,
+        ]);
     }
 
     /**
@@ -25,7 +31,10 @@ class ImagemController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.imagem.adicionar');
+        $imagens = BancoImagem::paginate();
+        return view('admin.pages.imagem.adicionar', [
+            'imagens' => $imagens,
+        ]);
     }
 
     /**
@@ -36,9 +45,17 @@ class ImagemController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->imagem->isValid()) {
-            $request->imagem->store('imagem');
+        if ($request->caminho->isValid()) {
+            $dateNow = Carbon::now()->format('Y/m');
+            //dd($dateNow);
+            $path = "storage/{$request->caminho->store("imagem/$dateNow")}";
+
+            BancoImagem::create([
+                "titulo" => $request->titulo,
+                "caminho" => $path,
+            ]);
         }
+        return redirect()->route('imagem.index');
     }
 
 

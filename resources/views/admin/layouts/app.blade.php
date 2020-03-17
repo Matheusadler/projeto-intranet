@@ -169,7 +169,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{ route('imagem.index') }}" class="nav-link active">
                                         <p>Listar</p>
                                     </a>
                                 </li>
