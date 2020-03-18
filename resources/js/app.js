@@ -54,4 +54,11 @@ $(function() {
         $(this).val(picker.startDate.format("DD/MM/YYYY"));
     });
     //}
+
+    $('.swalDefaultSuccess').click(function() {
+        Toast.fire({
+            type: 'success',
+            title: 'Notícia cadastrada com sucesso!'
+        })
+    });
 });

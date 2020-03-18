@@ -24,9 +24,9 @@
                             <input class="form-control" type="text" name="titulo" value="{{ old('titulo') }}">
                         </div>
                         <div class="input-group mb-3">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="caminho" name="caminho">
-                                <label class="custom-file-label">Escolha o Arquivo</label>
+                            <div class="custom-file-upload">
+                                <label for="caminho">Selecione a Imagem</label><br>
+                                <input type="file" id="caminho" name="caminho" accept=".jpg, .jpeg, .png">
                             </div>
                         </div>
                     </div>

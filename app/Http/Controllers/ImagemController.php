@@ -15,9 +15,17 @@ class ImagemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __construct()
     {
-        $imagens = BancoImagem::all();
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $titulo = $request->filtro;
+        //dd($titulo);
+        $imagens = BancoImagem::where('titulo', 'like', "%$titulo%")->paginate(15);
         //dd($imagens);
         return view('admin.pages.imagem.listar', [
             'imagens' => $imagens,

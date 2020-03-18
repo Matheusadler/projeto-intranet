@@ -13,7 +13,10 @@
 
                 <div class="card card-dark">
                     <div class="card-header">
-                        <h3 class="card-title">Informações da Notícia</h3>
+                        <h3 class="card-title">
+                            <i class="nav-icon fas fa-info-circle"></i>
+                            Informações da Notícia
+                        </h3>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
@@ -49,7 +52,10 @@
 
                 <div class="card card-dark">
                     <div class="card-header">
-                        <h3 class="card-title">Agendar Publicação</h3>
+                        <h3 class="card-title">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            Agendar Publicação
+                        </h3>
                     </div>
 
                     <div class="card-body">
@@ -79,7 +85,10 @@
 
             <div class="card card-dark">
                 <div class="card-header">
-                    <h3 class="card-title">Conteúdo da notícia</h3>
+                    <h3 class="card-title">
+                        <i class="nav-icon fas fa-keyboard"></i>
+                        Conteúdo da notícia
+                    </h3>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
@@ -107,12 +116,10 @@
 
         </div>
         <div class="card-footer text-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSubmit">Adicionar
-                Notícia</button>
-            <button type="button" class="btn btn-primary" data-toggle="modal"
-                data-target="#ModalCancel">Cancelar</button>
+            <button type="submit" class="btn btn-primary swalDefaultSuccess">Adicionar Notícia</button>
+            <button type="button" class="btn btn-primary">Cancelar</button>
         </div>
-        <!-- Modal Submit-->
+        <!-- Modal Submit
         <div class="modal fade" id="ModalSubmit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -133,7 +140,7 @@
                 </div>
             </div>
         </div>
-        <!--Modal Cancel -->
+        Modal Cancel 
         <div class="modal fade" id="ModalCancel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -154,7 +161,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </form>
 
 </div>
