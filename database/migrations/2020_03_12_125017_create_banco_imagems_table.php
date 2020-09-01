@@ -15,7 +15,6 @@ class CreateBancoImagemsTable extends Migration
     {
         Schema::create('banco_imagems', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('formato_img', 255);
             $table->string('legenda', 255)->nullable();
             $table->string('titulo', 255)->nullable();
             $table->string('caminho', 255);

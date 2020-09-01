@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'GWI - Listar Notícias')
+
 @section('content')
 <div class="container-fluid">
     <h3><strong>Notícias</strong></h3>
@@ -29,11 +31,20 @@
                             <tr>
                                 <td class="text-left">{{ $noticia->titulo_interno }}</td>
                                 <td class="text-center">{{ $noticia->data_inicial->format('d/m/Y') }}</td>
-                                <td class="text-center">{{ Auth::user()->name }}</td>
+                                <td class="text-center">{{ $noticia->autor }}</td>
                                 <td class="text-center">
-                                    <a href="/#"><i class="nav-icon fas fa-arrows-alt"></i></a>
-                                    <a href="/#"><i class="nav-icon fas fa-edit"></i></a>
-                                    <a href="/#"><i class="nav-icon fas fa-trash-alt"></i></a>
+                                    <table>
+                                        <a href="/#" class="btn btn-link btn-sm"><i
+                                                class="nav-icon fas fa-arrows-alt"></i></a>
+                                        <a href="{{ route('noticia.edit', $noticia->id) }}"
+                                            class="btn btn-link btn-sm"><i class="nav-icon fas fa-edit"></i></a>
+                                        <form action="{{ route('noticia.destroy', $noticia->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-link btn-sm"><i
+                                                    class="nav-icon fas fa-trash"></i></button>
+                                        </form>
+                                    </table>
                                 </td>
                             </tr>
                             @endforeach

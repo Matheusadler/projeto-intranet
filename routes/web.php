@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('site.welcome');
 });
+Route::get('/register', function () {
+    return view('site.register');
+});
 
 Route::get('/dashboard', function () {
     return view('admin.pages.dashboard');
@@ -72,6 +75,10 @@ Route::get('/usuario', function () {
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
+Route::get('login', 'LoginController@index')->name('login');
+Route::get('register', 'RegisterController@index')->name('register');
+Route::get('forgetpass', 'ForgetpassController@index')->name('forgetpass');
+
 
 Route::get('logout', 'LogoutController@logout')->name('logout');
 

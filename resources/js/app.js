@@ -24,7 +24,9 @@ $(function() {
         autoUpdateInput: false,
         singleDatePicker: true,
         showDropdowns: true,
-        drops: "up",
+        minYear: 1901,
+        maxYear: parseInt(moment().format('YYYY'), 10),
+        drops: "down",
         locale: {
             format: "DD/MM/YYYY",
             daysOfWeek: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],

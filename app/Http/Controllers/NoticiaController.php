@@ -7,6 +7,7 @@ use App\Models\Noticia;
 use App\Models\Editoria;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class NoticiaController extends Controller
 {
@@ -62,6 +63,7 @@ class NoticiaController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        $request->autor = Auth::user()->name;
         Noticia::create([
             "chapeu" => $request->chapeu,
             "setor" => $request->setor,
@@ -70,11 +72,12 @@ class NoticiaController extends Controller
             "subtitulo" => $request->subtitulo,
             "texto" => $request->texto,
             "data_inicial" => Carbon::createFromFormat('d/m/Y', $request->data_inicial),
-            "data_final" => Carbon::createFromFormat('d/m/Y', $request->data_final),
+            //"data_final" => Carbon::createFromFormat('d/m/Y', $request->data_final),
             "editoria_id" => $request->editoria,
             "banco_imagem_id" => $request->imagem,
+            "autor" => $request->autor,
         ]);
-
+        //dd($request->all());
         return redirect()->route('noticia.index');
     }
 
@@ -98,6 +101,15 @@ class NoticiaController extends Controller
     public function edit($id)
     {
         //
+        $editorias = Editoria::all();
+        $imagens = BancoImagem::all();
+        if (!$noticia = Noticia::find($id))
+            return redirect()->back();
+        return view('admin.pages.noticia.editar', [
+            'noticias' => $noticia,
+            'editorias' => $editorias,
+            'imagens' => $imagens,
+        ]);
     }
 
     /**
@@ -110,6 +122,20 @@ class NoticiaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        if (!$noticia = Noticia::find($id))
+            return redirect()->back();
+        $noticia->chapeu = $request->chapeu;
+        $noticia->setor = $request->setor;
+        $noticia->titulo_interno = $request->titulo_interno;
+        $noticia->titulo_capa = $request->titulo_capa;
+        $noticia->subtitulo = $request->subtitulo;
+        $noticia->texto = $request->texto;
+        $noticia->data_inicial = Carbon::createFromFormat('d/m/Y', $request->data_inicial);
+        $noticia->editoria_id = $request->editoria;
+        $noticia->banco_imagem_id = $request->imagem;
+        $noticia->save();
+        //dd($noticia);
+        return redirect()->route('noticia.index');
     }
 
     /**
@@ -121,5 +147,9 @@ class NoticiaController extends Controller
     public function destroy($id)
     {
         //
+        if (!$noticia = Noticia::find($id))
+            return redirect()->back();
+        $noticia->delete();
+        return redirect()->route('noticia.index');
     }
 }
