@@ -25,7 +25,10 @@
                 <!-- /.card-header -->
                 <div class="card-body content-center">
                     @foreach ($imagens as $imagem)
-                    <img src="{{ $imagem->caminho }}" alt="" class="img-list border border-dark">
+
+                    <a href="{{ $imagem->caminho }}" data-lightbox="imagem-exemplo" data-title="{{ $imagem->titulo }}">
+                        <img src="{{ $imagem->caminho }}" alt="" class="img-list border border-dark">
+                    </a>
                     @endforeach
                     <hr>
                     {{ $imagens->links('admin.layouts.paginate') }}

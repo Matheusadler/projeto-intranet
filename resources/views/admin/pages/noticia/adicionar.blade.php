@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="card-body">
-                        <label>Data Inicial</label>
+                        <label>Data</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
@@ -74,7 +74,7 @@
                 <div class="card card-dark">
                     <div class="card-header">
                         <h3 class="card-title">
-                            <i class="far fa-plus-square"></i>
+                            <i class="fas fa-plus-square"></i>
                             Criado Por
                         </h3>
                     </div>
