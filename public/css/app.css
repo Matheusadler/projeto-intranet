@@ -42118,3 +42118,7 @@ body.lb-disable-scrolling {
 .acoes {
     margin: 2px;
 }
+
+#slug {
+    text-transform: uppercase;
+}

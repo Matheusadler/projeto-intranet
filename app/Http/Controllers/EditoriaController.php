@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Editoria;
 use Illuminate\Http\Request;
 
 class EditoriaController extends Controller
@@ -12,14 +13,18 @@ class EditoriaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    /* public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
-    } */
+    }
 
     public function index()
     {
         //
+        $editorias = Editoria::all();
+        return view('admin.pages.editoria.listar', [
+            'editorias' => $editorias,
+        ]);
     }
 
     /**
@@ -30,6 +35,10 @@ class EditoriaController extends Controller
     public function create()
     {
         //
+        $editorias = Editoria::all();
+        return view('admin.pages.editoria.adicionar', [
+            'editorias' => $editorias,
+        ]);
     }
 
     /**
@@ -41,6 +50,13 @@ class EditoriaController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->editoria);
+        Editoria::create([
+            "nome" => $request->nome,
+            "slug" => $request->slug,
+            "editoria_pai" => $request->editoria,
+        ]);
+        return redirect()->route('editoria.index');
     }
 
     /**
@@ -49,7 +65,7 @@ class EditoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
         //
     }

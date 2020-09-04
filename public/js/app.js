@@ -9290,4 +9290,7 @@ $(function() {
             title: 'Notícia cadastrada com sucesso!'
         })
     });
+    $('#editoria').keyup(function() {
+        $('#slug').val($(this).val());
+    });
 });

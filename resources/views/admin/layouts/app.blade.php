@@ -122,12 +122,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/editoria" class="nav-link active">
+                                    <a href="{{ route('editoria.create') }}" class="nav-link active">
                                         <p>Adicionar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{ route('editoria.index') }}" class="nav-link active">
                                         <p>Listar</p>
                                     </a>
                                 </li>

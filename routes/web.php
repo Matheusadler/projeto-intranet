@@ -85,3 +85,5 @@ Route::get('logout', 'LogoutController@logout')->name('logout');
 Route::resource('noticia', 'NoticiaController');
 
 Route::resource('imagem', 'ImagemController');
+
+Route::resource('editoria', 'EditoriaController');
