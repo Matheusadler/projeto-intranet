@@ -38,48 +38,16 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>Imagem</label>
                             <select class="form-control" name="imagem">
                                 @foreach ($imagens as $imagem)
                                 <option value="{{ $imagem->id }}">{{ $imagem->titulo }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col">
-
-                <div class="card card-dark">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="nav-icon fas fa-calendar-check"></i>
-                            Agendar Publicação
-                        </h3>
-                    </div>
-
-                    <div class="card-body">
-                        <label>Data</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <input type="text" autocomplete="off" name="data_inicial" value="{{ old('data_inicial') }}"
-                                class="form-control datas">
-                        </div>
-                    </div>
-                </div>
-                <div class="card card-dark">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="fas fa-plus-square"></i>
-                            Criado Por
-                        </h3>
-                    </div>
-
-                    <div class="card-body">
+                        @endforeach
+                        </select>
+                    </div> --}}
+                    <div class="form-group">
+                        <label>Criado por</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-at"></i></span>
@@ -90,46 +58,144 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="full-form">
 
+        </div>
+        <div class="col">
             <div class="card card-dark">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <i class="nav-icon fas fa-keyboard"></i>
-                        Conteúdo da notícia
+                        <i class="nav-icon fas fa-image"></i>
+                        Mídia
                     </h3>
                 </div>
+
                 <div class="card-body">
-                    <div class="form-group">
-                        <label>Título Interno</label>
-                        <input class="form-control" type="text" name="titulo_interno"
-                            value="{{ old('titulo_interno') }}">
+                    <label>Imagem</label>
+                    <div class="input-group">
+                        <input type="hidden" name="imagem" id="imagem">
+                        <input type="text" id="nomeImg" class="form-control" readonly>
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-light" data-toggle="modal"
+                                data-target="#modalBancoImagem">
+                                <i class="fa fa-file-image"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Título Capa</label>
-                        <input class="form-control" type="text" name="titulo_capa" value="{{ old('titulo_capa') }}">
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalBancoImagem" tabindex="-1" role="dialog"
+                        aria-labelledby="modalBancoImagem" aria-hidden="true">
+                        <div class=" modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLongTitle">Banco de Imagens</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {{-- <div class="card card-body">
+                                        <form class="form-inline">
+                                            <input class="form-control mr-sm-2" name="filtro" type="search"
+                                                placeholder="Filtar por Título" aria-label="Search">
+                                            <button class="btn btn-outline-success my-2 my-sm-0"
+                                                type="submit">Filtrar</button>
+                                            <button class="btn btn-outline-info my-2 my-sm-0"
+                                                type="submit">Limpar</button>
+                                        </form>
+                                    </div> --}}
+                                    <div class="card-body content-center">
+                                        @foreach ($imagens as $imagem)
+                                        <img src="{{ asset($imagem->caminho)}}" alt="" data-id="{{ $imagem->id }}"
+                                            data-titulo="{{ $imagem->titulo }}" class="img-list border border-dark">
+                                        @endforeach
+                                        <hr>
+
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Subtítulo da Notícia</label>
-                        <textarea class="form-control" name="subtitulo" value="{{ old('subtitulo') }}"
-                            rows="3"></textarea>
-                    </div>
-                    <hr>
-                    <div class="form-group">
-                        <label>Corpo da Notícia</label>
-                        <textarea class="form-control" name="texto" value="{{ old('texto') }}" id="summary-ckeditor"
-                            placeholder="texto"></textarea>
+                </div>
+                <div class="card-body">
+                    <label>Legenda</label>
+                    <div class="input-group">
+                        <input type="text" autocomplete="off" name="" value="" class="form-control">
                     </div>
                 </div>
             </div>
 
+            <div class="card card-dark">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="nav-icon fas fa-calendar-check"></i>
+                        Agendar Publicação
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    <label>Data Inicial</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                        </div>
+                        <input type="text" autocomplete="off" name="data_inicial" value="{{ old('data_inicial') }}"
+                            class="form-control datas">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <label>Data Final</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                        </div>
+                        <input type="text" autocomplete="off" name="data_final" value="{{ old('data_final') }}"
+                            class="form-control datas">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary swalDefaultSuccess">Adicionar Notícia</button>
-            <a href="/home" class="btn btn-primary">Cancelar</a>
+</div>
+<div class="full-form">
+
+    <div class="card card-dark">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="nav-icon fas fa-keyboard"></i>
+                Conteúdo da notícia
+            </h3>
         </div>
-        <!-- Modal Submit
+        <div class="card-body">
+            <div class="form-group">
+                <label>Título Interno</label>
+                <input class="form-control" type="text" name="titulo_interno" value="{{ old('titulo_interno') }}">
+            </div>
+            <div class="form-group">
+                <label>Título Capa</label>
+                <input class="form-control" type="text" name="titulo_capa" value="{{ old('titulo_capa') }}">
+            </div>
+            <div class="form-group">
+                <label>Subtítulo da Notícia</label>
+                <textarea class="form-control" name="subtitulo" value="{{ old('subtitulo') }}" rows="3"></textarea>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label>Corpo da Notícia</label>
+                <textarea class="form-control" name="texto" value="{{ old('texto') }}" id="summary-ckeditor"
+                    placeholder="texto"></textarea>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="card-footer text-center">
+    <button type="submit" class="btn btn-primary swalDefaultSuccess">Adicionar Notícia</button>
+    <a href="/home" class="btn btn-primary">Cancelar</a>
+</div>
+<!-- Modal Submit
         <div class="modal fade" id="ModalSubmit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -172,7 +238,7 @@
                 </div>
             </div>
         </div>-->
-    </form>
+</form>
 
 </div>
 

@@ -344,14 +344,6 @@
     </div>
     <!-- /.content-wrapper -->
 
-
-    <!-- Main Footer -->
-    <footer class="main-footer text-center">
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2020
-            Intranet Mirante.</strong>
-    </footer>
-    </div>
     <!-- ./wrapper -->
 
     <script src="{{mix('js/app.js')}}"></script>
@@ -359,6 +351,11 @@
 
 </body>
 
-
+<!-- Main Footer -->
+<footer class="main-footer text-center">
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2020
+        Intranet Mirante.</strong>
+</footer>
 
 </html>

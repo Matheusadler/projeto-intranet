@@ -9293,4 +9293,12 @@ $(function() {
     $('#editoria').keyup(function() {
         $('#slug').val($(this).val());
     });
+
+    $('#modalBancoImagem').on('click', 'img', function() {
+        var idImg = $(this).data('id');
+        var tituloImg = $(this).data('titulo');
+        $('#imagem').val(idImg);
+        $('#nomeImg').val(tituloImg);
+        $('#modalBancoImagem').modal('hide');
+    })
 });

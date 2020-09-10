@@ -34,7 +34,8 @@
                                 <td class="text-center">{{ $editoria->editoria_pai }}</td>
                                 <td class="text-center">
                                     <table>
-                                        <a href="" class="btn btn-link btn-sm"><i class="nav-icon fas fa-edit"></i></a>
+                                        <a href="{{ route('editoria.edit', $editoria->id) }}"
+                                            class="btn btn-link btn-sm"><i class="nav-icon fas fa-edit"></i></a>
                                         <form action="" method="POST">
                                             @csrf
                                             @method('DELETE')

@@ -79,6 +79,11 @@ class EditoriaController extends Controller
     public function edit($id)
     {
         //
+        if (!$editoria = Editoria::find($id))
+            return redirect()->back();
+        return view('admin.pages.editoria.editar', [
+            'editorias' => $editoria,
+        ]);
     }
 
     /**
@@ -91,6 +96,14 @@ class EditoriaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        if (!$editoria = Editoria::find($id))
+            return redirect()->back();
+        $editoria->nome = $request->nome;
+        $editoria->slug = $request->slug;
+        $editoria->editoria_pai = $request->editoria_pai;
+        $editoria->save();
+        //dd($noticia);
+        return redirect()->route('editoria.index');
     }
 
     /**

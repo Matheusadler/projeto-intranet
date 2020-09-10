@@ -65,6 +65,7 @@ class NoticiaController extends Controller
         //dd($request->all());
         $request->autor = Auth::user()->name;
         //dd($request->autor);
+        dd($request->all());
         Noticia::create([
             "chapeu" => $request->chapeu,
             "setor" => $request->setor,
