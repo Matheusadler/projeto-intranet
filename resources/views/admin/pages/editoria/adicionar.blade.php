@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'GWI - Adicionar Editorias')
+
 @section('content')
 <div class="container-fluid">
     <h3><strong>Adicionar Editoria</strong></h3>
@@ -42,7 +44,7 @@
             </div>
         </div>
         <div class="card-footer text-center">
-            <button type="submit" name="myButton" class="btn btn-primary">Adicionar Editoria</button>
+            <button type="submit" class="btn btn-primary">Adicionar Editoria</button>
             <button type="button" class="btn btn-primary">Cancelar</button>
         </div>
 

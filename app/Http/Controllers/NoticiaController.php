@@ -65,7 +65,7 @@ class NoticiaController extends Controller
         //dd($request->all());
         $request->autor = Auth::user()->name;
         //dd($request->autor);
-        dd($request->all());
+        //dd($request->all());
         Noticia::create([
             "chapeu" => $request->chapeu,
             "setor" => $request->setor,
@@ -78,6 +78,7 @@ class NoticiaController extends Controller
             "editoria_id" => $request->editoria,
             "banco_imagem_id" => $request->imagem,
             "autor" => $request->autor,
+            "legenda" => $request->legenda,
         ]);
         //dd($request->all());
         return redirect()->route('noticia.index');
