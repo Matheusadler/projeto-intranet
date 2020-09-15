@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'GWI - Listar Notícias')
+@section('title', 'GWI - Notícias')
 
 @section('content')
 <div class="container-fluid">

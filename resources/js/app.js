@@ -63,9 +63,7 @@ $(function() {
             title: 'Notícia cadastrada com sucesso!'
         })
     });
-    $('#editoria').keyup(function() {
-        $('#slug').val($(this).val());
-    });
+
 
     $('#modalBancoImagem').on('click', 'img', function() {
         var idImg = $(this).data('id');
@@ -74,4 +72,10 @@ $(function() {
         $('#nomeImg').val(tituloImg);
         $('#modalBancoImagem').modal('hide');
     })
+
+    $(document).ready(function() {
+        $("#editoria").stringToSlug({
+            getPut: '#slug',
+        });
+    });
 });

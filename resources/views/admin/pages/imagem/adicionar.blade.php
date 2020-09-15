@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'GWI - Adicionar Imagens')
+
 @section('content')
 <div class="container-fluid">
     <h3><strong>Adicionar Imagem</strong></h3>

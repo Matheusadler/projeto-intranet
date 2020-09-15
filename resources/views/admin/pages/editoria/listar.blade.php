@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'GWI - Listar Editorias')
+@section('title', 'GWI - Editorias')
 
 @section('content')
 <div class="container-fluid">
@@ -36,7 +36,7 @@
                                     <table>
                                         <a href="{{ route('editoria.edit', $editoria->id) }}"
                                             class="btn btn-link btn-sm"><i class="nav-icon fas fa-edit"></i></a>
-                                        <form action="" method="POST">
+                                        <form action="{{ route('editoria.destroy', $editoria->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-link btn-sm"><i

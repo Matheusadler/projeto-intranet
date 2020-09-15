@@ -42120,5 +42120,5 @@ body.lb-disable-scrolling {
 }
 
 #slug {
-    text-transform: uppercase;
+    text-transform: lowercase;
 }

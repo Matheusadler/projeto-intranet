@@ -33,7 +33,7 @@
                             <label>Editoria Pai</label>
                             <select class="form-control" name="editoria">
                                 <option value="" disabled selected>Selecione uma Editoria</option>
-                                @foreach ($editorias as $editoria)
+                                @foreach ($editorias_list as $editoria)
                                 <option value="{{ $editoria->nome }}">{{ $editoria->nome }}</option>
                                 @endforeach
                             </select>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary swalDefaultSuccess">Adicionar Notícia</button>
+            <button type="submit" class="btn btn-primary swalDefaultSuccess">Editar Editoria</button>
             <a href="{{ route('editoria.index') }}" class="btn btn-primary">Cancelar</a>
         </div>
     </form>

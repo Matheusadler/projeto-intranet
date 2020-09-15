@@ -74,7 +74,7 @@ class NoticiaController extends Controller
             "subtitulo" => $request->subtitulo,
             "texto" => $request->texto,
             "data_inicial" => Carbon::createFromFormat('d/m/Y', $request->data_inicial),
-            //"data_final" => Carbon::createFromFormat('d/m/Y', $request->data_final),
+            "data_final" => Carbon::createFromFormat('d/m/Y', $request->data_final),
             "editoria_id" => $request->editoria,
             "banco_imagem_id" => $request->imagem,
             "autor" => $request->autor,
@@ -134,6 +134,7 @@ class NoticiaController extends Controller
         $noticia->subtitulo = $request->subtitulo;
         $noticia->texto = $request->texto;
         $noticia->data_inicial = Carbon::createFromFormat('d/m/Y', $request->data_inicial);
+        $noticia->data_final = Carbon::createFromFormat('d/m/Y', $request->data_final);
         $noticia->editoria_id = $request->editoria;
         $noticia->banco_imagem_id = $request->imagem;
         $noticia->save();

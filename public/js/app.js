@@ -9225,6 +9225,430 @@ if (version[0] <= 2 && version[1] < 17 || version[0] >= 3) throw new Error("Temp
         }, l
     })(jQuery)
 }();
+/*
+ * jQuery stringToSlug plug-in 1.2.1
+ *
+ * Plugin HomePage http://leocaseiro.com.br/jquery-plugin-string-to-slug/
+ *
+ * Copyright (c) 2009 Leo Caseiro
+ * 
+ * Based on Edson Hilios (http://www.edsonhilios.com.br/ Algoritm
+ * 
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+(function($) {
+
+    $.fn.stringToSlug = function(options) {
+
+        var opts = $.extend({
+            setEvents: 'keyup keydown blur',
+            getPut: '#permalink',
+            space: '-',
+            prefix: '',
+            suffix: '',
+            limit: 0,
+            replace: ''
+        }, options || {});
+
+        $(this).bind(opts.setEvents, function() {
+
+            var text = $(this).val();
+
+            text = opts.prefix + text + opts.suffix;
+            text = text.replace(opts.replace, "");
+            text = text.replace(/<[^>]*>/gi, "");
+            text = $.trim(text.toString());
+
+            var chars = [];
+            for (var i = 0; i < 32; i++) {
+                chars.push('')
+            }
+
+            chars.push(opts.space);
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push(opts.space);
+            chars.push(opts.space);
+            chars.push('');
+            chars.push('');
+            chars.push(opts.space);
+            chars.push(opts.space);
+            chars.push(opts.space);
+            chars.push(opts.space);
+            chars.push('0');
+            chars.push('1');
+            chars.push('2');
+            chars.push('3');
+            chars.push('4');
+            chars.push('5');
+            chars.push('6');
+            chars.push('7');
+            chars.push('8');
+            chars.push('9');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('A');
+            chars.push('B');
+            chars.push('C');
+            chars.push('D');
+            chars.push('E');
+            chars.push('F');
+            chars.push('G');
+            chars.push('H');
+            chars.push('I');
+            chars.push('J');
+            chars.push('K');
+            chars.push('L');
+            chars.push('M');
+            chars.push('N');
+            chars.push('O');
+            chars.push('P');
+            chars.push('Q');
+            chars.push('R');
+            chars.push('S');
+            chars.push('T');
+            chars.push('U');
+            chars.push('V');
+            chars.push('W');
+            chars.push('X');
+            chars.push('Y');
+            chars.push('Z');
+            chars.push(opts.space);
+            chars.push(opts.space);
+            chars.push(opts.space);
+            chars.push('');
+            chars.push(opts.space);
+            chars.push('');
+            chars.push('a');
+            chars.push('b');
+            chars.push('c');
+            chars.push('d');
+            chars.push('e');
+            chars.push('f');
+            chars.push('g');
+            chars.push('h');
+            chars.push('i');
+            chars.push('j');
+            chars.push('k');
+            chars.push('l');
+            chars.push('m');
+            chars.push('n');
+            chars.push('o');
+            chars.push('p');
+            chars.push('q');
+            chars.push('r');
+            chars.push('s');
+            chars.push('t');
+            chars.push('u');
+            chars.push('v');
+            chars.push('w');
+            chars.push('x');
+            chars.push('y');
+            chars.push('z');
+            chars.push(opts.space);
+            chars.push('');
+            chars.push(opts.space);
+            chars.push('');
+            chars.push('');
+            chars.push('C');
+            chars.push('A');
+            chars.push('');
+            chars.push('f');
+            chars.push('');
+            chars.push('');
+            chars.push('T');
+            chars.push('t');
+            chars.push('');
+            chars.push('');
+            chars.push('S');
+            chars.push('');
+            chars.push('CE');
+            chars.push('A');
+            chars.push('Z');
+            chars.push('A');
+            chars.push('A');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push(opts.space);
+            chars.push(opts.space);
+            chars.push('');
+            chars.push('TM');
+            chars.push('s');
+            chars.push('');
+            chars.push('ae');
+            chars.push('A');
+            chars.push('z');
+            chars.push('Y');
+            chars.push('');
+            chars.push('');
+            chars.push('c');
+            chars.push('L');
+            chars.push('o');
+            chars.push('Y');
+            chars.push('');
+            chars.push('S');
+            chars.push('');
+            chars.push('c');
+            chars.push('a');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('r');
+            chars.push(opts.space);
+            chars.push('o');
+            chars.push('');
+            chars.push('2');
+            chars.push('3');
+            chars.push('');
+            chars.push('u');
+            chars.push('p');
+            chars.push('');
+            chars.push('');
+            chars.push('1');
+            chars.push('o');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('A');
+            chars.push('A');
+            chars.push('A');
+            chars.push('A');
+            chars.push('A');
+            chars.push('A');
+            chars.push('AE');
+            chars.push('C');
+            chars.push('E');
+            chars.push('E');
+            chars.push('E');
+            chars.push('E');
+            chars.push('I');
+            chars.push('I');
+            chars.push('I');
+            chars.push('I');
+            chars.push('D');
+            chars.push('N');
+            chars.push('O');
+            chars.push('O');
+            chars.push('O');
+            chars.push('O');
+            chars.push('O');
+            chars.push('x');
+            chars.push('O');
+            chars.push('U');
+            chars.push('U');
+            chars.push('U');
+            chars.push('U');
+            chars.push('Y');
+            chars.push('D');
+            chars.push('B');
+            chars.push('a');
+            chars.push('a');
+            chars.push('a');
+            chars.push('a');
+            chars.push('a');
+            chars.push('a');
+            chars.push('ae');
+            chars.push('c');
+            chars.push('e');
+            chars.push('e');
+            chars.push('e');
+            chars.push('e');
+            chars.push('i');
+            chars.push('i');
+            chars.push('i');
+            chars.push('i');
+            chars.push('o');
+            chars.push('n');
+            chars.push('o');
+            chars.push('o');
+            chars.push('o');
+            chars.push('o');
+            chars.push('o');
+            chars.push('');
+            chars.push('o');
+            chars.push('u');
+            chars.push('u');
+            chars.push('u');
+            chars.push('u');
+            chars.push('y');
+            chars.push('');
+            chars.push('y');
+            chars.push('z');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('C');
+            chars.push('c');
+            chars.push('D');
+            chars.push('d');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('E');
+            chars.push('e');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('N');
+            chars.push('n');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('R');
+            chars.push('r');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('S');
+            chars.push('s');
+            chars.push('');
+            chars.push('');
+            chars.push('T');
+            chars.push('t');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('U');
+            chars.push('u');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('');
+            chars.push('Z');
+            chars.push('z');
+
+            for (var i = 256; i < 100; i++) {
+                chars.push('')
+            }
+
+            var stringToSlug = new String();
+            for (var i = 0; i < text.length; i++) {
+                stringToSlug += chars[text.charCodeAt(i)];
+            }
+
+            stringToSlug = stringToSlug.replace(new RegExp('\\' + opts.space + '{2,}', 'gmi'), opts.space);
+            stringToSlug = stringToSlug.replace(new RegExp('(^' + opts.space + ')|(' + opts.space + '$)', 'gmi'), '');
+            stringToSlug = stringToSlug.toLowerCase();
+
+            if (opts.limit > 0) {
+                if (stringToSlug.length > opts.limit) {
+                    stringToSlug = stringToSlug.substr(0, opts.limit);
+                }
+            }
+
+            $(opts.getPut).val(stringToSlug);
+            $(opts.getPut).html(stringToSlug);
+
+            return (this);
+
+        });
+
+        return (this);
+
+    }
+})(window.jQuery);
 //require('./bootstrap');
 $(function() {
     //Initialize Select2 Elements
@@ -9290,9 +9714,7 @@ $(function() {
             title: 'Notícia cadastrada com sucesso!'
         })
     });
-    $('#editoria').keyup(function() {
-        $('#slug').val($(this).val());
-    });
+
 
     $('#modalBancoImagem').on('click', 'img', function() {
         var idImg = $(this).data('id');
@@ -9301,4 +9723,10 @@ $(function() {
         $('#nomeImg').val(tituloImg);
         $('#modalBancoImagem').modal('hide');
     })
+
+    $(document).ready(function() {
+        $("#editoria").stringToSlug({
+            getPut: '#slug',
+        });
+    });
 });
