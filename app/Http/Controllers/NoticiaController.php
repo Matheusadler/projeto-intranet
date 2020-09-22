@@ -148,12 +148,12 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
-        if (!$noticia = Noticia::find($id))
-            return redirect()->back();
+        $noticia = Noticia::findOrFail($request->noticia_id);
         $noticia->delete();
+
         return redirect()->route('noticia.index');
     }
 }

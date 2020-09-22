@@ -65,12 +65,19 @@ $(function() {
     });
 
 
-    $('#modalBancoImagem').on('click', 'img', function() {
-        var idImg = $(this).data('id');
-        var tituloImg = $(this).data('titulo');
-        $('#imagem').val(idImg);
-        $('#nomeImg').val(tituloImg);
-        $('#modalBancoImagem').modal('hide');
+    $('#modal-imagem').on('click', 'img', function() {
+        var img_id = $(this).data('id');
+        var img_titulo = $(this).data('titulo');
+        console.log(img_id);
+        $('#imagem').val(img_id);
+        $('#img-nome').val(img_titulo);
+        $('#modal-imagem').modal('hide');
+    })
+
+    $('#modal-delete').on('shown.bs.modal', function(e) {
+        var noticia_id = $(e.relatedTarget).data('id');
+        var modal = $(this)
+        modal.find('.modal-body #noticia_id').val(noticia_id);
     })
 
     $(document).ready(function() {

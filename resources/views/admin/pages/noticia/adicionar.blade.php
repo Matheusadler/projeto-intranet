@@ -92,9 +92,9 @@
                             <label>Imagem</label>
                             <div class="input-group-prepend">
                                 <input type="hidden" name="imagem" id="imagem">
-                                <input type="text" id="nomeImg" class="form-control" readonly>
+                                <input type="text" id="img-nome" class="form-control" readonly>
                                 <button type="button" class="btn btn-dark" data-toggle="modal"
-                                    data-target="#modalBancoImagem">
+                                    data-target="#modal-imagem">
                                     <i class="fa fa-file-image"></i>
                                 </button>
                             </div>
@@ -106,32 +106,7 @@
                                     class="form-control">
                             </div>
                         </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="modalBancoImagem" tabindex="-1" role="dialog"
-                            aria-labelledby="modalBancoImagem" aria-hidden="true">
-                            <div class=" modal-dialog modal-dialog-centered modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h3 class="modal-title" id="exampleModalLongTitle">Banco de Imagens</h3>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="card card-body">
-                                        </div>
-                                        <div class="card-body content-center">
-                                            @foreach ($imagens as $imagem)
-                                            <img src="{{ asset($imagem->caminho)}}" alt="" data-id="{{ $imagem->id }}"
-                                                data-titulo="{{ $imagem->titulo }}" class="img-list border border-dark">
-                                            @endforeach
-                                            <hr>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="card card-dark">
@@ -171,7 +146,28 @@
     </form>
 </div>
 
-
+<!-- Modal -->
+<div class="modal fade" id="modal-imagem" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class=" modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalLabel">Banco de Imagens</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body content-center">
+                    @foreach ($imagens as $imagem)
+                    <img src="{{ asset($imagem->caminho)}}" alt="" data-id="{{ $imagem->id }}"
+                        data-titulo="{{ $imagem->titulo }}" class="img-list border border-dark">
+                    @endforeach
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
     CKEDITOR.replace( 'summary-ckeditor' );
