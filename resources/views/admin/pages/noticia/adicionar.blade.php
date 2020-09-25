@@ -9,6 +9,7 @@
     <hr>
     <form class="full-form" action="{{ route('noticia.store') }}" method="POST" enctype="multipart/form-data" role="">
         @csrf
+        @include('admin.includes.alerts')
         <div class="row">
             <div class="col-sm-8">
                 <div class="card card-dark">
@@ -118,22 +119,24 @@
                     </div>
                     <div class="card-body">
                         <label>Data Inicial</label>
-                        <div class="input-group">
+                        <div class="">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+
+                                <input type="text" autocomplete="off" name="data_inicial"
+                                    value="{{ old('data_inicial') }}" class="form-control datas" readonly>
                             </div>
-                            <input type="text" autocomplete="off" name="data_inicial" value="{{ old('data_inicial') }}"
-                                class="form-control datas">
                         </div>
                     </div>
                     <div class="card-body">
                         <label>Data Final</label>
-                        <div class="input-group">
+                        <div class="">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+
+                                <input type="text" autocomplete="off" name="data_final" value="{{ old('data_final') }}"
+                                    class="form-control datas" readonly>
                             </div>
-                            <input type="text" autocomplete="off" name="data_final" value="{{ old('data_final') }}"
-                                class="form-control datas">
                         </div>
                     </div>
                 </div>

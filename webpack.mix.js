@@ -18,6 +18,7 @@ mix.styles(['./node_modules/bootstrap/dist/css/bootstrap.css',
     './node_modules/admin-lte/plugins/select2/css/select2.min.css',
     './node_modules/sweetalert2/dist/sweetalert2.min.css',
     './node_modules/lightbox2/dist/css/lightbox.css',
+    './node_modules/jquery-timepicker/jquery.timepicker.css',
     'resources/css/app.css'
 ], 'public/css/app.css');
 
@@ -34,6 +35,7 @@ mix.scripts(['./node_modules/jquery/dist/jquery.min.js',
     './node_modules/admin-lte/plugins/daterangepicker/daterangepicker.js',
     './node_modules/sweetalert2/dist/sweetalert2.min.js',
     './node_modules/lightbox2/dist/js/lightbox.js',
+    './node_modules/jquery-timepicker/jquery.timepicker.js',
     'resources/js/tempus-dominus.js',
     'resources/js/jquery.stringtoslug.min.js',
     'resources/js/app.js',

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidationNoticiasRequest;
 use App\Models\BancoImagem;
 use App\Models\Noticia;
 use App\Models\Editoria;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+
 
 class NoticiaController extends Controller
 {
@@ -57,15 +59,17 @@ class NoticiaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\ValidationNoticiasRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidationNoticiasRequest $request)
     {
         //dd($request->all());
         $request->autor = Auth::user()->name;
         //dd($request->autor);
         //dd($request->all());
+        //dd($request->all());
+        //dd(Carbon::createFromFormat('d-m-Y H:i:s', $request->data_inicial));
         Noticia::create([
             "chapeu" => $request->chapeu,
             "setor" => $request->setor,
@@ -73,14 +77,14 @@ class NoticiaController extends Controller
             "titulo_capa" => $request->titulo_capa,
             "subtitulo" => $request->subtitulo,
             "texto" => $request->texto,
-            "data_inicial" => Carbon::createFromFormat('d/m/Y', $request->data_inicial),
-            "data_final" => Carbon::createFromFormat('d/m/Y', $request->data_final),
+            "data_inicial" => Carbon::createFromFormat('d/m/Y H:i:s', $request->data_inicial),
+            "data_final" => Carbon::createFromFormat('d/m/Y H:i:s', $request->data_final),
             "editoria_id" => $request->editoria,
             "banco_imagem_id" => $request->imagem,
             "autor" => $request->autor,
             "legenda" => $request->legenda,
         ]);
-        //dd($request->all());
+
         return redirect()->route('noticia.index');
     }
 
@@ -100,6 +104,7 @@ class NoticiaController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * 
      */
     public function edit($id)
     {
@@ -118,11 +123,11 @@ class NoticiaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\ValidationNoticiasRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ValidationNoticiasRequest $request, $id)
     {
         //
         if (!$noticia = Noticia::find($id))

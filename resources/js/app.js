@@ -23,12 +23,15 @@ $(function() {
     datepicker.daterangepicker({
         autoUpdateInput: false,
         singleDatePicker: true,
+        timePicker: true,
+        timePicker24Hour: true,
+        timePickerSeconds: true,
         showDropdowns: true,
         minYear: 1901,
         maxYear: parseInt(moment().format('YYYY'), 10),
         drops: "down",
         locale: {
-            format: "DD/MM/YYYY",
+            format: "DD/MM/YYYY HH:mm:ss",
             daysOfWeek: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
             monthNames: [
                 "Janeiro",
@@ -53,9 +56,16 @@ $(function() {
             });*/
 
     datepicker.on("apply.daterangepicker", function(ev, picker) {
-        $(this).val(picker.startDate.format("DD/MM/YYYY"));
+        $(this).val(picker.startDate.format("DD/MM/YYYY HH:mm:ss"));
     });
     //}
+
+
+    /*
+            datepicker.mask("00/00/0000", {
+                clearIfNotMatch: true,
+                placeholder: "__/__/____"
+            });*/
 
     $('.swalDefaultSuccess').click(function() {
         Toast.fire({
