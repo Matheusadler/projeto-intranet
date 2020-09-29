@@ -10605,4 +10605,5 @@ $(function() {
             getPut: '#slug',
         });
     });
+
 });
