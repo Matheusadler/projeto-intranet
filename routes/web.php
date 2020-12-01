@@ -57,9 +57,6 @@ Route::get('/plantao', function () {
     return view('admin.pages.plantao');
 });
 
-Route::get('/promoção', function () {
-    return view('admin.pages.promocao');
-});
 
 Route::get('/ramal', function () {
     return view('admin.pages.ramal');
@@ -80,3 +77,6 @@ Route::get('logout', 'LogoutController@logout')->name('logout');
 Route::resource('noticia', 'NoticiaController');
 Route::resource('imagem', 'ImagemController');
 Route::resource('editoria', 'EditoriaController');
+Route::resource('promocao', 'PromocaoController');
+Route::resource('operacao', 'OperacaoController');
+Route::resource('modulo', 'ModuloController');

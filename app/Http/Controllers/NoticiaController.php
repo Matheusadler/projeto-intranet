@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ValidationNoticiasRequest;
+use App\Http\Requests\NoticiaRequest;
 use App\Models\BancoImagem;
 use App\Models\Noticia;
 use App\Models\Editoria;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 
 class NoticiaController extends Controller
@@ -16,7 +21,6 @@ class NoticiaController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
 
     public function __construct()
@@ -33,7 +37,6 @@ class NoticiaController extends Controller
         /*
         $noticias = Noticia::all();
         dd($noticias->all());
-
         return view('admin.pages.noticia.listar_noticia', [
             'noticias' => $noticias,
         ]);
@@ -43,7 +46,7 @@ class NoticiaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|Response|View
      */
     public function create()
     {
@@ -59,17 +62,12 @@ class NoticiaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  App\Http\Requests\ValidationNoticiasRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param NoticiaRequest $request
+     * @return RedirectResponse
      */
-    public function store(ValidationNoticiasRequest $request)
+    public function store(NoticiaRequest $request)
     {
-        //dd($request->all());
         $request->autor = Auth::user()->name;
-        //dd($request->autor);
-        //dd($request->all());
-        //dd($request->all());
-        //dd(Carbon::createFromFormat('d-m-Y H:i:s', $request->data_inicial));
         Noticia::create([
             "chapeu" => $request->chapeu,
             "setor" => $request->setor,
@@ -91,8 +89,8 @@ class NoticiaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return void
      */
     public function show($id)
     {
@@ -103,8 +101,8 @@ class NoticiaController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
-     * 
+     * @return Application|Factory|Response|View
+     *
      */
     public function edit($id)
     {
@@ -123,13 +121,13 @@ class NoticiaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  App\Http\Requests\ValidationNoticiasRequest  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param NoticiaRequest $request
+     * @param int $id
+     * @return RedirectResponse
      */
-    public function update(ValidationNoticiasRequest $request, $id)
+    public function update(Request $request, int $id)
     {
-        //
+
         if (!$noticia = Noticia::find($id))
             return redirect()->back();
         $noticia->chapeu = $request->chapeu;
@@ -138,27 +136,29 @@ class NoticiaController extends Controller
         $noticia->titulo_capa = $request->titulo_capa;
         $noticia->subtitulo = $request->subtitulo;
         $noticia->texto = $request->texto;
-        $noticia->data_inicial = Carbon::createFromFormat('d/m/Y', $request->data_inicial);
-        $noticia->data_final = Carbon::createFromFormat('d/m/Y', $request->data_final);
+        $noticia->data_inicial = Carbon::createFromFormat('d/m/Y H:i:s', $request->data_inicial);
+        $noticia->data_final = Carbon::createFromFormat('d/m/Y H:i:s', $request->data_final);
         $noticia->editoria_id = $request->editoria;
         $noticia->banco_imagem_id = $request->imagem;
         $noticia->save();
-        //dd($noticia);
+
         return redirect()->route('noticia.index');
     }
 
     /**
+     *
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
         //
-        $noticia = Noticia::findOrFail($request->noticia_id);
-        $noticia->delete();
 
+        if (!$noticia = Noticia::find($id))
+            return redirect()->back();
+        $noticia->delete();
         return redirect()->route('noticia.index');
     }
 }

@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Prophecy\Call\Call;
 
-class ImagemController extends Controller
+class  ImagemController extends Controller
 {
     /**
      * Display a listing of the resource.

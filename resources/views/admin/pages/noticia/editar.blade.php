@@ -4,7 +4,8 @@
 
 @section('content')
 <div class="container">
-    <form action="{{ route('noticia.update', $noticias->id) }}" method="POST">
+    <form class="full-form" action="{{ route('noticia.update', $noticias->id) }}" method="POST"
+        enctype="multipart/form-data" role="">
         @method('PUT')
         @csrf
         <div class="row">
@@ -90,10 +91,10 @@
                         <div class="form-group">
                             <label>Imagem</label>
                             <div class="input-group-prepend">
-                                <input type="hidden" name="imagem" id="imagem">
-                                <input type="text" id="nomeImg" class="form-control" readonly>
+                                <input type="hidden" name="imagem" id="imagem" value="">
+                                <input type="text" id="img-nome" class="form-control" value="" readonly>
                                 <button type="button" class="btn btn-dark" data-toggle="modal"
-                                    data-target="#modalBancoImagem">
+                                    data-target="#modal-imagem">
                                     <i class="fa fa-file-image"></i>
                                 </button>
                             </div>
@@ -103,32 +104,6 @@
                             <div class="input-group">
                                 <input type="text" autocomplete="off" name="legenda" value="{{ $noticias->legenda }}"
                                     class="form-control">
-                            </div>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="modalBancoImagem" tabindex="-1" role="dialog"
-                            aria-labelledby="modalBancoImagem" aria-hidden="true">
-                            <div class=" modal-dialog modal-dialog-centered modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h3 class="modal-title" id="exampleModalLongTitle">Banco de Imagens</h3>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="card card-body">
-                                        </div>
-                                        <div class="card-body content-center">
-                                            @foreach ($imagens as $imagem)
-                                            <img src="{{ asset($imagem->caminho)}}" alt="" data-id="{{ $imagem->id }}"
-                                                data-titulo="{{ $imagem->titulo }}" class="img-list border border-dark">
-                                            @endforeach
-                                            <hr>
-
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -168,6 +143,28 @@
             <a href="/home" class="btn btn-primary">Cancelar</a>
         </div>
     </form>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modal-imagem" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class=" modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalLabel">Banco de Imagens</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body content-center">
+                    @foreach ($imagens as $imagem)
+                    <img src="{{ asset($imagem->caminho)}}" alt="" data-id="{{ $imagem->id }}"
+                        data-titulo="{{ $imagem->titulo }}" class="img-list border border-dark">
+                    @endforeach
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>

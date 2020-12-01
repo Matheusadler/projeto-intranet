@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditoriaRequest;
 use App\Models\Editoria;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class EditoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
 
     public function __construct()
@@ -30,7 +32,7 @@ class EditoriaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -44,10 +46,10 @@ class EditoriaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param EditoriaRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(EditoriaRequest $request)
     {
         //
         //dd($request->editoria);
@@ -63,7 +65,7 @@ class EditoriaController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show(Request $request)
     {
@@ -74,7 +76,7 @@ class EditoriaController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|Response|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -91,14 +93,17 @@ class EditoriaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param EditoriaRequest $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id)
     {
         //
         //dd($request->editoria);
+        /*$this->validate($request, [
+            'nome' => 'required'
+        ]);*/
         if (!$editoria = Editoria::find($id))
             return redirect()->back();
         $editoria->nome = $request->nome;
@@ -113,7 +118,7 @@ class EditoriaController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy($id)
     {
