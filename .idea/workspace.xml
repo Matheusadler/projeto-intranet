@@ -41,45 +41,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9257661b-b16d-42b0-bb7f-a47b5ae10c36" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/projeto-intranet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ModuloController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OperacaoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PromocaoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/EditoriaRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/NoticiaRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Modulo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Operacao.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Promocao.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_17_135325_create_promocaos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_17_140105_add_regulamento_promocoes_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_01_120022_create_operacaos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_01_123404_create_modulos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/TV_Mirante.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/modulo/adicionar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/modulo/editar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/modulo/listar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/operacao/listar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/promocao/adicionar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/promocao/editar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/promocao/listar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EditoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EditoriaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImagemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImagemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NoticiaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NoticiaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ValidationNoticiasRequest.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ContatoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/site/contato.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/noticia/adicionar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/noticia/adicionar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/noticia/editar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/noticia/editar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/noticia/listar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/noticia/listar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/operacao.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/promocao.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,10 +185,12 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/site" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/resources/views/admin/pages/operacao" />
     </key>
@@ -259,7 +228,8 @@
       <workItem from="1606733933907" duration="837000" />
       <workItem from="1606735807894" duration="3743000" />
       <workItem from="1606739955066" duration="6535000" />
-      <workItem from="1606817632606" duration="9777000" />
+      <workItem from="1606817632606" duration="10253000" />
+      <workItem from="1606908607854" duration="2168000" />
     </task>
     <servers />
   </component>

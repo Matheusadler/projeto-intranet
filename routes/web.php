@@ -69,6 +69,7 @@ Route::get('/usuario', function () {
 Auth::routes();
 Route::get('', 'HomeController@index')->name('default');
 Route::get('home', 'HomeController@index')->name('home');
+Route::get('contato', 'ContatoController@index')->name('contato');
 Route::get('login', 'LoginController@index')->name('login');
 Route::get('register', 'RegisterController@index')->name('register');
 Route::get('forgetpass', 'ForgetpassController@index')->name('forgetpass');
